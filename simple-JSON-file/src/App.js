@@ -40,7 +40,10 @@ const renderedJokes = jokePackage.map((joke)=>
 )
 return(
 <>
-  <div class="jokesArea">{renderedJokes}</div>
+  <h3>Random Joke for today: </h3>
+  <div class="jokesArea">
+    {renderedJokes[Math.floor(Math.random()*4)]}
+  </div>
 </>
 )
 }
