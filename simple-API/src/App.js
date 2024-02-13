@@ -3,8 +3,8 @@ import './index.css';
 
 function App() {
     const [title, setTitle] = useState(null);
-    const loadTitle = () => {
-      fetch("https://jsonplaceholder.typicode.com/todos/", {
+    const loadTitle = async () => {
+      await fetch("https://jsonplaceholder.typicode.com/todos/", {
         method: "GET",
         
       })
