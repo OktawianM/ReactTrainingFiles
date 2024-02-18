@@ -1,6 +1,10 @@
+import sampleVar from "./Head";
+
 function Contact() {
     return (
-        <h2>This is Contact Page</h2>
+        <>
+            <h2>This is Contact Pages</h2>
+        </>
     )
 }
 
