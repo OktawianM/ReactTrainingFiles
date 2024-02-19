@@ -1,9 +1,8 @@
-import sampleVar from "./Head";
+function Contact(props) {
 
-function Contact() {
     return (
         <>
-            <h2>This is Contact Pages</h2>
+            <h3>This is Contact Pages with text from Head Page: {props.passedText}</h3>
         </>
     )
 }

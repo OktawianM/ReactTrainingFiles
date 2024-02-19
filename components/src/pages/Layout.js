@@ -1,4 +1,3 @@
-import Contact from "./Contact";
 import Head from "./Head";
 
 function Layout() {
@@ -6,7 +5,6 @@ function Layout() {
         <>
             <h1>This is: Layout Page</h1>
             <Head />
-            <Contact />
         </>
     )
 }
