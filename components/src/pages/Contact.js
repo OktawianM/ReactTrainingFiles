@@ -2,7 +2,8 @@ function Contact(props) {
 
     return (
         <>
-            <h3>This is Contact Pages with text from Head Page: {props.passedText}</h3>
+            <h3>This is Contact Pages with text from Head Page: </h3>
+            {props.xxx()}
         </>
     )
 }
