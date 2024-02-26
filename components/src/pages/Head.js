@@ -4,7 +4,7 @@ function Head() {
 
     const textToPass = "String redirected to Contact.js";
     const functionToPass = (sampleTxt) => {
-        return (<h1>{sampleTxt}</h1>);
+        return (<h1>{sampleTxt + ". " + textToPass}</h1>);
     }
 
     return (
