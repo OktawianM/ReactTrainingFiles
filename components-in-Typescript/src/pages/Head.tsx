@@ -1,8 +1,9 @@
+import React from "react";
 import Contact from "./Contact";
 
 function Head() {
 
-    const textToPass = "String redirected to Contact.js";
+    const textToPass: string = "String redirected to Contact.js";
 
     return (
         <>
