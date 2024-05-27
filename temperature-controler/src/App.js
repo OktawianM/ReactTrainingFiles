@@ -1,26 +1,27 @@
 import { useEffect, useState } from 'react';
 
 function App() {
-  const [value, setValue] = useState(0);
-  const [temperature, setTemperature] = useState("lightblue")
+  const [redValue, setRedValue] = useState(0);
+  const [blueValue, setBlueValue] = useState(0);
+  const [tempValue, setTempValue] = useState(0);
 
-  useEffect(() => (
-    value > 20 ? setTemperature("red") : setTemperature("lightblue")
-  ), [value])
-
-  const add = () => {
-    setValue(value + 1);
+  const warmer = () => {
+    setRedValue((prev) => prev + 10);
+    setBlueValue((prev) => prev - 10);
+    setTempValue((prev) => prev + 1);
   }
 
-  const substract = () => {
-    setValue(value - 1);
+  const colder = () => {
+    setRedValue((prev) => prev - 10);
+    setBlueValue((prev) => prev + 10);
+    setTempValue((prev) => prev - 1);
   }
 
   return (
-    <div style={{ backgroundColor: temperature }}>
-      <button onClick={() => add()}>+</button>
-      <h1>Temperature: ${value}</h1>
-      <button onClick={() => substract()}>-</button>
+    <div style={{ backgroundColor: `rgba(${redValue}, ${0}, ${blueValue}, ${0.5})` }}>
+      <button onClick={() => warmer()}>+</button>
+      <h1>Temperature: ${tempValue}</h1>
+      <button onClick={() => colder()}>-</button>
     </div>
   );
 }
