@@ -1,28 +1,64 @@
-import './index.css'
+import "./index.css";
 
 function App() {
   return (
-    <div className="max-w-xl px-12 lg:max-w-lg">
-      <div className="mt-6 flex max-w-md gap-x-4">
-        <input
-          id="wordForTranslation"
-          type="text"
-          placeholder="Enter word/sentence for translation"
-          className="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm/6"
-        />
-        <button
-          type="submit"
-          onClick={() => alert("Translating")}
-          className="flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-        >
-          Translate
-        </button>
+    <div className="mx-auto px-20 py-5 max-w-xl lg:max-w-none ">
+      <div className="flex flex-row gap-x-10 w-full place-content-end ">
+        <div className="mt-6 text-lg/12 text-gray-600"> User name </div>
+      </div>
+      <div className="flex ">
+        <div className="mt-6 text-lg/12 text-gray-600 px-5 border-r border-gray-500">
+          Home
+        </div>
+        <div className="mt-6 text-lg/12 text-gray-600 px-5 border-r border-gray-500">
+          Words
+        </div>
+        <div className="mt-6 text-lg/12 text-gray-600 px-5  border-r border-gray-500">
+          Grammar
+        </div>
+        <div className="mt-6 text-lg/12 text-gray-600 px-5"> Sources </div>
+      </div>
+      <div className="grid grid-cols-1 my-20 lg:grid-cols-2 gap-x-10 gap-y-5 w-full h-1/2 place-items-center items-end">
+        <div className="w-full">
+          <input
+            className="w-full rounded-md border-1 bg-white/5 text-white sm:text-sm/12 h-20 bottom-0"
+            type="text"
+            placeholder="Enter word/sentence for translation"
+          />
+        </div>
+        <div className="w-full">
+          <div className="flex my-5">
+            <div className="mt-6 text-lg/12 text-gray-600 px-5 border-r border-gray-500">
+              English
+            </div>
+            <div className="mt-6 text-lg/12 text-gray-600 px-5  border-r border-gray-500">
+              German
+            </div>
+            <div className="mt-6 text-lg/12 text-gray-600 px-5"> Italian </div>
+          </div>
+          <input
+            className=" flex-auto w-full rounded-md text-white sm:text-sm/12 bg-gray-600 h-20"
+            type="text"
+          />
+        </div>
+      </div>
+
+      <div className=" flex-auto w-full text-lg/12 text-gray-600 place-items-center">
+        Examples of use:
+        <div className="grid grid-cols-9 my-3 w-full text-gray-400">
+          <div className="grid col-start-1 col-span-4 place-items-end">
+            Przykład 1
+          </div>
+          <div className="grid col-start-5 col-span-1 place-items-center ">
+            <img src="../images/vectors/favoriteIcon.svg" />
+          </div>
+          <div className="grid col-start-6 col-span-4 text-gray-400">
+            Example 1
+          </div>
+        </div>
       </div>
     </div>
-
-
-
-  )
+  );
 }
 
-export default App
+export default App;
