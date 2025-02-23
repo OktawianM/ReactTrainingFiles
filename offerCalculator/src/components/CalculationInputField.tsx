@@ -7,7 +7,7 @@ export default function CalculationInputField(
     <div className="w-1/4 text-white mt-5 ">
       <input
         className="w-full rounded-md border-1 bg-white/5 text-white sm:text-sm/12 h-10 bottom-0 mt-5"
-        type="number"
+        type="text"
         value={props.calculationValue}
         onChange={props.setValue}
       />

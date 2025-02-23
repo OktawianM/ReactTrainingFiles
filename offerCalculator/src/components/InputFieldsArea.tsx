@@ -15,7 +15,7 @@ export default function InputFieldsArea({
         setValue={(event: React.ChangeEvent<HTMLInputElement>) => {
           setCalculatorData((prev: calculationDataType) => ({
             ...prev,
-            hoursInOffice: parseInt(event.target.value),
+            hoursInOffice: event.target.value,
           }));
         }}
         description="Hours in the office"
@@ -26,7 +26,7 @@ export default function InputFieldsArea({
         setValue={(event: React.ChangeEvent<HTMLInputElement>) => {
           setCalculatorData((prev: calculationDataType) => ({
             ...prev,
-            hoursForFilesPreparing: parseInt(event.target.value),
+            hoursForFilesPreparing: event.target.value,
           }));
         }}
         description="Preparing files (hours)"
@@ -37,7 +37,7 @@ export default function InputFieldsArea({
         setValue={(event: React.ChangeEvent<HTMLInputElement>) => {
           setCalculatorData((prev: calculationDataType) => ({
             ...prev,
-            numberOfCommutes: parseInt(event.target.value),
+            numberOfCommutes: event.target.value,
           }));
         }}
         description="Number of commutes to the company"
@@ -48,7 +48,7 @@ export default function InputFieldsArea({
         setValue={(event: React.ChangeEvent<HTMLInputElement>) => {
           setCalculatorData((prev: calculationDataType) => ({
             ...prev,
-            numberOfForms: parseInt(event.target.value),
+            numberOfForms: event.target.value,
           }));
         }}
         description="Total number of forms"
