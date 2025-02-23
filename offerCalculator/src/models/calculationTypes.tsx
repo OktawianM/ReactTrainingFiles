@@ -1,7 +1,7 @@
 export type calculationDataType = {
-  isTwoDimension: boolean;
-  isThreeDimension: boolean;
-  isTexture: boolean;
+  isTwoDimension?: boolean;
+  isThreeDimension?: boolean;
+  isTexture?: boolean;
   hoursInOffice: number;
   hoursForFilesPreparing: number;
   numberOfCommutes: number;
