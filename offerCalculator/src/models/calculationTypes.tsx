@@ -13,3 +13,8 @@ export type inputFieldProps = {
   setValue: (value: React.ChangeEvent<HTMLInputElement>) => void;
   description: string;
 };
+
+export type checkBoxProps = {
+  description: string;
+  isChecked: boolean;
+};

@@ -1,5 +1,5 @@
 export const initialCalculationData = {
-  isTwoDimension: true,
+  isTwoDimension: false,
   isThreeDimension: false,
   isTexture: false,
   hoursInOffice: "",
