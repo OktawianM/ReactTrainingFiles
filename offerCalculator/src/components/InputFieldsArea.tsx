@@ -1,4 +1,4 @@
-import { calculationDataType } from "../models/calculationTypes";
+import { calculationDataType, fieldDataType } from "../models/calculationTypes";
 import CalculationInputField from "./CalculationInputField";
 
 export default function InputFieldsArea({
@@ -8,51 +8,37 @@ export default function InputFieldsArea({
   calculationData: calculationDataType;
   setCalculatorData: React.Dispatch<React.SetStateAction<calculationDataType>>;
 }): JSX.Element {
+  const textFieldDescription: fieldDataType[] = [
+    {
+      description: "Hours in the office",
+      id: "hoursInOffice",
+      value: calculationData.hoursInOffice,
+    },
+    {
+      description: "Preparing files (hours)",
+      id: "hoursForFilesPreparing",
+      value: calculationData.hoursForFilesPreparing,
+    },
+    {
+      description: "Number of commutes to the company",
+      id: "numberOfCommutes",
+      value: calculationData.numberOfCommutes,
+    },
+    {
+      description: "Total number of forms",
+      id: "numberOfForms",
+      value: calculationData.numberOfForms,
+    },
+  ];
   return (
     <>
-      <CalculationInputField
-        calculationValue={calculationData.hoursInOffice}
-        setValue={(event: React.ChangeEvent<HTMLInputElement>) => {
-          setCalculatorData((prev: calculationDataType) => ({
-            ...prev,
-            hoursInOffice: event.target.value,
-          }));
-        }}
-        description="Hours in the office"
-      />
-
-      <CalculationInputField
-        calculationValue={calculationData.hoursForFilesPreparing}
-        setValue={(event: React.ChangeEvent<HTMLInputElement>) => {
-          setCalculatorData((prev: calculationDataType) => ({
-            ...prev,
-            hoursForFilesPreparing: event.target.value,
-          }));
-        }}
-        description="Preparing files (hours)"
-      />
-
-      <CalculationInputField
-        calculationValue={calculationData.numberOfCommutes}
-        setValue={(event: React.ChangeEvent<HTMLInputElement>) => {
-          setCalculatorData((prev: calculationDataType) => ({
-            ...prev,
-            numberOfCommutes: event.target.value,
-          }));
-        }}
-        description="Number of commutes to the company"
-      />
-
-      <CalculationInputField
-        calculationValue={calculationData.numberOfForms}
-        setValue={(event: React.ChangeEvent<HTMLInputElement>) => {
-          setCalculatorData((prev: calculationDataType) => ({
-            ...prev,
-            numberOfForms: event.target.value,
-          }));
-        }}
-        description="Total number of forms"
-      />
+      {textFieldDescription.map((item: fieldDataType, index) => (
+        <CalculationInputField
+          key={index}
+          setCalculatorData={setCalculatorData}
+          fieldData={item}
+        />
+      ))}
     </>
   );
 }

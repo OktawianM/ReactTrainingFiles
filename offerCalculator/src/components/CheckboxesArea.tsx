@@ -1,50 +1,29 @@
-import { useEffect, useState } from "react";
-import { calculationDataType, checkBoxProps } from "../models/calculationTypes";
+import { Dispatch, SetStateAction } from "react";
+import {
+  calculationDataType,
+  checkboxDataType,
+} from "../models/calculationTypes";
 import CalculationCheckbox from "./CalculationCheckbox";
 
 export default function InputFieldsArea({
-  calculationData,
   setCalculatorData,
 }: {
-  calculationData: calculationDataType;
-  setCalculatorData: React.Dispatch<React.SetStateAction<calculationDataType>>;
+  setCalculatorData: Dispatch<SetStateAction<calculationDataType>>;
 }): JSX.Element {
-  const [selectedValue, setSelectedValue] = useState<checkBoxProps>({
-    description: "",
-    isChecked: false,
-  });
-  useEffect(() => {
-    setCalculatorData((prev: calculationDataType) => ({
-      ...prev,
-      isTwoDimension:
-        selectedValue.description === "2D"
-          ? !calculationData.isTwoDimension
-          : calculationData.isTwoDimension,
-      isThreeDimension:
-        selectedValue.description === "3D"
-          ? !calculationData.isThreeDimension
-          : calculationData.isThreeDimension,
-      isTexture:
-        selectedValue.description === "Texture"
-          ? !calculationData.isTexture
-          : calculationData.isTexture,
-    }));
-  }, [selectedValue]);
-
+  const checkboxDescription: checkboxDataType[] = [
+    { description: "2D", id: "isTwoDimension" },
+    { description: "3D", id: "isThreeDimension" },
+    { description: "Texture", id: "isTexture" },
+  ];
   return (
     <div className="grid grid-cols-3 gap-x-10 gap-y-5 w-1/4 h-1/2 place-items-center items-end mb-5">
-      <CalculationCheckbox
-        descriptionOfCheckbox={"2D"}
-        setSelectedValue={setSelectedValue}
-      />
-      <CalculationCheckbox
-        descriptionOfCheckbox={"3D"}
-        setSelectedValue={setSelectedValue}
-      />
-      <CalculationCheckbox
-        descriptionOfCheckbox={"Texture"}
-        setSelectedValue={setSelectedValue}
-      />
+      {checkboxDescription.map((item: checkboxDataType, index) => (
+        <CalculationCheckbox
+          key={index}
+          setCalculatorData={setCalculatorData}
+          checkboxData={item}
+        />
+      ))}
     </div>
   );
 }

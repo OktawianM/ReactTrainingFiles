@@ -1,21 +1,22 @@
-import { useEffect, useState } from "react";
-import { checkBoxProps } from "../models/calculationTypes";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import {
+  calculationDataType,
+  checkboxDataType,
+} from "../models/calculationTypes";
 
 export default function CalculationInputField({
-  descriptionOfCheckbox,
-  setSelectedValue,
-  isUncheck,
+  checkboxData,
+  setCalculatorData,
 }: {
-  descriptionOfCheckbox: string;
-  setSelectedValue: React.Dispatch<React.SetStateAction<checkBoxProps>>;
-  isUncheck?: boolean | undefined;
+  checkboxData: checkboxDataType;
+  setCalculatorData: Dispatch<SetStateAction<calculationDataType>>;
 }): JSX.Element {
   const [isChecked, setIsChecked] = useState(false);
   useEffect(() => {
-    setSelectedValue({
-      description: descriptionOfCheckbox,
-      isChecked: isChecked,
-    });
+    setCalculatorData((prev: calculationDataType) => ({
+      ...prev,
+      [`${checkboxData.id}`]: isChecked,
+    }));
   }, [isChecked]);
   return (
     <div className="grid text-white place-items-center">
@@ -23,12 +24,12 @@ export default function CalculationInputField({
         type="checkbox"
         className="checkbox bg-blue-500 rounded p-4"
         placeholder="texture"
-        // checked={isUncheck}
+        //checked={isUncheck}
         onChange={(event) => {
           setIsChecked(event.target.checked);
         }}
       />
-      <h4>{descriptionOfCheckbox}</h4>
+      <h4>{checkboxData.description}</h4>
     </div>
   );
 }

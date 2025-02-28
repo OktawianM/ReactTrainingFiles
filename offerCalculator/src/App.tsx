@@ -15,10 +15,7 @@ function App() {
   return (
     <div className="mx-auto px-20 py-5 max-w-xl lg:max-w-none ">
       <div className="grid gap-x-10  w-full h-1/2 place-items-center items-end">
-        <CheckboxesArea
-          calculationData={calculationData}
-          setCalculatorData={setCalculatorData}
-        />
+        <CheckboxesArea setCalculatorData={setCalculatorData} />
         <InputFieldsArea
           calculationData={calculationData}
           setCalculatorData={setCalculatorData}

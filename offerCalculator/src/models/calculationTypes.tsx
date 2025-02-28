@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 export type calculationDataType = {
   isTwoDimension?: boolean;
   isThreeDimension?: boolean;
@@ -9,12 +11,22 @@ export type calculationDataType = {
 };
 
 export type inputFieldProps = {
-  calculationValue: string;
-  setValue: (value: React.ChangeEvent<HTMLInputElement>) => void;
-  description: string;
+  setCalculatorData: Dispatch<SetStateAction<calculationDataType>>;
+  fieldData: fieldDataType;
 };
 
 export type checkBoxProps = {
   description: string;
   isChecked: boolean;
+};
+
+export type fieldDataType = {
+  description: string;
+  id: string;
+  value: string;
+};
+
+export type checkboxDataType = {
+  id: string;
+  description: string;
 };
