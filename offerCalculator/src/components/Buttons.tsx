@@ -1,7 +1,7 @@
-import { calculateOffer } from "../helpers/functions";
+import { calculateOffer, saveCalculation } from "../helpers/functions";
 import { calculationDataType } from "../models/calculationTypes";
 
-export default function InputFieldsArea({
+export function CalculateButton({
   calculationData,
   setResult,
 }: {
@@ -17,6 +17,19 @@ export default function InputFieldsArea({
       }}
     >
       Calculate
+    </button>
+  );
+}
+
+export function SaveButton(): JSX.Element {
+  return (
+    <button
+      className=" bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 mt-10 rounded"
+      onClick={() => {
+        saveCalculation();
+      }}
+    >
+      Save
     </button>
   );
 }

@@ -1,15 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
 
-export type calculationDataType = {
-  isTwoDimension?: boolean;
-  isThreeDimension?: boolean;
-  isTexture?: boolean;
-  hoursInOffice: string;
-  hoursForFilesPreparing: string;
-  numberOfCommutes: string;
-  numberOfForms: string;
-};
-
 export type inputFieldProps = {
   setCalculatorData: Dispatch<SetStateAction<calculationDataType>>;
   fieldData: fieldDataType;
@@ -29,4 +19,20 @@ export type fieldDataType = {
 export type checkboxDataType = {
   id: string;
   description: string;
+};
+
+export type calculationDataType = {
+  companyName: string;
+  material?: string;
+  surfaceArea?: number;
+  estimatedTime?: number;
+  isTwoDimension?: boolean;
+  isThreeDimension?: boolean;
+  isTexture?: boolean;
+  descriptiom?: string;
+  hoursInOffice: string;
+  hoursForFilesPreparing: string;
+  numberOfCommutes: string;
+  numberOfForms: string;
+  total: number;
 };

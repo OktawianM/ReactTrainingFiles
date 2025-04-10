@@ -6,4 +6,10 @@ export const initialCalculationData = {
   hoursForFilesPreparing: "",
   numberOfCommutes: "",
   numberOfForms: "",
+  companyName: "",
+  material: "",
+  surfaceArea: undefined,
+  estimatedTime: undefined,
+  descriptiom: "",
+  total: 0,
 };

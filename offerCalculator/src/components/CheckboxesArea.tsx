@@ -5,7 +5,7 @@ import {
 } from "../models/calculationTypes";
 import CalculationCheckbox from "./CalculationCheckbox";
 
-export default function InputFieldsArea({
+export default function checkboxesArea({
   setCalculatorData,
 }: {
   setCalculatorData: Dispatch<SetStateAction<calculationDataType>>;
