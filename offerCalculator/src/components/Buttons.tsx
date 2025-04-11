@@ -21,15 +21,19 @@ export function CalculateButton({
   );
 }
 
-export function SaveButton(): JSX.Element {
+export const SaveButton = ({
+  calculationData,
+}: {
+  calculationData: calculationDataType;
+}): JSX.Element => {
   return (
     <button
       className=" bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 mt-10 rounded"
       onClick={() => {
-        saveCalculation();
+        saveCalculation(calculationData);
       }}
     >
       Save
     </button>
   );
-}
+};

@@ -11,5 +11,5 @@ export const initialCalculationData = {
   surfaceArea: undefined,
   estimatedTime: undefined,
   descriptiom: "",
-  total: 0,
+  total: "",
 };

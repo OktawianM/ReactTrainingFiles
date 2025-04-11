@@ -24,15 +24,15 @@ export type checkboxDataType = {
 export type calculationDataType = {
   companyName: string;
   material?: string;
-  surfaceArea?: number;
-  estimatedTime?: number;
+  surfaceArea?: string;
+  estimatedTime?: string;
   isTwoDimension?: boolean;
   isThreeDimension?: boolean;
   isTexture?: boolean;
-  descriptiom?: string;
+  description?: string;
   hoursInOffice: string;
   hoursForFilesPreparing: string;
   numberOfCommutes: string;
   numberOfForms: string;
-  total: number;
+  total: string;
 };

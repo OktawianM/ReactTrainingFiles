@@ -19,7 +19,7 @@ export default function CalculationInputField({
     }));
   }, [isChecked]);
   return (
-    <div className="grid text-white place-items-center">
+    <div className="grid text-white text-sm place-items-center">
       <input
         type="checkbox"
         className="checkbox bg-blue-500 rounded p-4"
