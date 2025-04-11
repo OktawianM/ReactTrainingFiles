@@ -9,7 +9,7 @@ export const db = await createRxDatabase({
 });
 //db.remove();
 await db.addCollections({
-  tasks: {
+  calculations: {
     schema: calculationSchema,
   },
 });

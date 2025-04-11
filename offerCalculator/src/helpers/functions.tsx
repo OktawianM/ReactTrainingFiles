@@ -11,10 +11,10 @@ export const calculateOffer = (data: calculationDataType): number => {
 };
 
 export const saveCalculation = async (calculationData: any) => {
-  console.log(calculationData);
+  const newId = (await getCalculations()).length + 1;
 
-  await db.tasks.insert({
-    id: `${Math.random()}`,
+  await db.calculations.insert({
+    id: `${newId}`,
     companyName: calculationData.companyName,
     material: calculationData.material,
     surfaceArea: parseInt(calculationData.surfaceArea),
@@ -30,7 +30,10 @@ export const saveCalculation = async (calculationData: any) => {
     total: parseInt(calculationData.total),
     timestamp: Date.now(),
   });
-  const query = db.tasks.find();
+};
+
+export const getCalculations = async () => {
+  const query = db.calculations.find();
   const tasks = await query.exec();
-  console.log(tasks.map((task) => task.toJSON()));
+  return tasks.map((task) => task.toJSON());
 };
