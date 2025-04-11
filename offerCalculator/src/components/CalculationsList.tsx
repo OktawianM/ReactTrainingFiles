@@ -6,8 +6,7 @@ export default function CalculationsList(): JSX.Element {
 
   useEffect(() => {
     getCalculations().then((data) => setCalculations(data));
-  }, []);
-  console.log(calculations);
+  }, [getCalculations]);
   return (
     <div className="flex flex-col gap-4 lg:border-l items-center border-blue-700 p-10">
       {calculations.map((item: any, index: number) => (

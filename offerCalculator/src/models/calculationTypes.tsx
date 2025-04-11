@@ -14,11 +14,13 @@ export type fieldDataType = {
   description: string;
   id: string;
   value: string;
+  defaultValue?: string;
 };
 
 export type checkboxDataType = {
   id: string;
   description: string;
+  defaultValue?: boolean;
 };
 
 export type calculationDataType = {

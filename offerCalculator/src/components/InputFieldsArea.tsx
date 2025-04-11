@@ -23,11 +23,13 @@ export default function InputFieldsArea({
       description: "Commutes (number)",
       id: "numberOfCommutes",
       value: calculationData.numberOfCommutes,
+      defaultValue: "1",
     },
     {
       description: "Forms (number)",
       id: "numberOfForms",
       value: calculationData.numberOfForms,
+      defaultValue: "1",
     },
   ];
   return (

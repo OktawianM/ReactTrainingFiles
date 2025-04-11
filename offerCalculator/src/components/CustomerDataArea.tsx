@@ -18,6 +18,7 @@ export default function CustomerDataArea({
       description: "Material",
       id: "material",
       value: calculationData.material ?? "",
+      defaultValue: "Steel",
     },
     {
       description: "Surface area (cm2)",

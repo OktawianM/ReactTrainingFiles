@@ -11,7 +11,7 @@ export default function checkboxesArea({
   setCalculatorData: Dispatch<SetStateAction<calculationDataType>>;
 }): JSX.Element {
   const checkboxDescription: checkboxDataType[] = [
-    { description: "2D", id: "isTwoDimension" },
+    { description: "2D", id: "isTwoDimension", defaultValue: true },
     { description: "3D", id: "isThreeDimension" },
     { description: "Texture", id: "isTexture" },
   ];

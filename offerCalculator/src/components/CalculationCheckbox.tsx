@@ -11,7 +11,7 @@ export default function CalculationInputField({
   checkboxData: checkboxDataType;
   setCalculatorData: Dispatch<SetStateAction<calculationDataType>>;
 }): JSX.Element {
-  const [isChecked, setIsChecked] = useState(false);
+  const [isChecked, setIsChecked] = useState(!!checkboxData.defaultValue);
   useEffect(() => {
     setCalculatorData((prev: calculationDataType) => ({
       ...prev,
@@ -24,7 +24,10 @@ export default function CalculationInputField({
         type="checkbox"
         className="checkbox bg-blue-500 rounded p-4"
         placeholder="texture"
-        //checked={isUncheck}
+        checked={isChecked}
+        onClick={() => {
+          setIsChecked(!isChecked);
+        }}
         onChange={(event) => {
           setIsChecked(event.target.checked);
         }}
